@@ -5,6 +5,7 @@ import pprint
 
 nm_scan = nmap.PortScanner()
 nm_scanner = nm_scan.scan('198.49.23.145','443',arguments='-O')
+#nm_scanner = nm_scan.scan(sys.argv[1],'443',arguments='-O') and change ip to sys.argv[1]
 pprint.pprint(nm_scanner)
 print("the host is "+nm_scanner['scan']['198.49.23.145']['status']['state'])
 print("the port 443 is : "+nm_scanner['scan']['198.49.23.145']['tcp'][443]['state'])
